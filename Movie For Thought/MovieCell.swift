@@ -17,7 +17,13 @@ class MovieCell: UITableViewCell{
     @IBOutlet weak var viewMovie: UIButton!
     
     func configureCell(movie: Movie){
-        
+        img.image = movie.img
+        name.text = movie.name
+        desc.text = movie.desc
+        imdb.text = movie.imdb
     }
     
+    @IBAction func viewMoviePressed(sender: AnyObject) {
+        
+    }
 }

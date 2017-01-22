@@ -80,11 +80,12 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="146" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-Lo-Aeg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="146" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-Lo-Aeg">
                                 <rect key="frame" x="0.0" y="68" width="600" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="146" id="MY3-MO-Zcc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="146" id="MY3-MO-Zcc" customClass="MovieCell" customModule="Movie_For_Thought" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MY3-MO-Zcc" id="TEp-ek-XWT">
@@ -129,6 +130,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWi-Gn-KQv">
                                                     <rect key="frame" x="8" y="8" width="584" height="129.5"/>
                                                     <connections>
+                                                        <action selector="viewMoviePressed:" destination="MY3-MO-Zcc" eventType="touchUpInside" id="h0D-Pr-k6a"/>
                                                         <segue destination="6rE-1f-e3b" kind="show" id="Baz-ov-Vyf"/>
                                                     </connections>
                                                 </button>
@@ -150,6 +152,13 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="K4B-SA-Z7e" secondAttribute="trailing" constant="12" id="otD-EQ-Mny"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="desc" destination="K4B-SA-Z7e" id="ngA-Su-GAN"/>
+                                            <outlet property="imdb" destination="w0O-Bo-69N" id="TUn-qR-ui0"/>
+                                            <outlet property="img" destination="1lK-HF-558" id="YsY-6A-35T"/>
+                                            <outlet property="name" destination="cOf-As-LbN" id="69m-1Y-HfI"/>
+                                            <outlet property="viewMovie" destination="sWi-Gn-KQv" id="Rtg-F2-lta"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -165,7 +174,9 @@
                             <constraint firstItem="Wtg-Lo-Aeg" firstAttribute="top" secondItem="lI0-pd-jwi" secondAttribute="bottom" id="kYr-C6-7Oh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qxH-r0-7fB" colorLabel="IBBuiltInLabel-Yellow"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wtg-Lo-Aeg" id="AJR-ps-vsW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,6 +15,19 @@ class Movie: NSObject, NSCoding{
     private var _desc: String!
     private var _img: UIImage!
     
+    var name: String{
+        return _name
+    }
+    var imdb: String{
+        return _imdb
+    }
+    var desc: String {
+        return _desc
+    }
+    var img: UIImage{
+        return _img
+    }
+    
     init(name: String, imdb: String, desc: String, imgPath: String){
         _name = name
         _imdb = imdb
