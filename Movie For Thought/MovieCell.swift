@@ -21,6 +21,9 @@ class MovieCell: UITableViewCell{
         name.text = movie.name
         desc.text = movie.desc
         imdb.text = movie.imdb
+        
+        img.layer.cornerRadius = 4.0
+        img.clipsToBounds = true
     }
     
     @IBAction func viewMoviePressed(sender: AnyObject) {

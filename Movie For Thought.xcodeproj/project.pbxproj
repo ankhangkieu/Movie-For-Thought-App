@@ -17,6 +17,7 @@
 		05479DE61E34AA17009A5812 /* ViewMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05479DE51E34AA17009A5812 /* ViewMovieVC.swift */; };
 		05479DE81E34B2C1009A5812 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05479DE71E34B2C1009A5812 /* MovieCell.swift */; };
 		05479DEA1E34B442009A5812 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05479DE91E34B442009A5812 /* Movie.swift */; };
+		05479DED1E34C756009A5812 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05479DEC1E34C756009A5812 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		05479DE51E34AA17009A5812 /* ViewMovieVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewMovieVC.swift; sourceTree = "<group>"; };
 		05479DE71E34B2C1009A5812 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		05479DE91E34B442009A5812 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		05479DEC1E34C756009A5812 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		05479DCA1E349ECB009A5812 /* Movie For Thought */ = {
 			isa = PBXGroup;
 			children = (
+				05479DEB1E34C735009A5812 /* DataServices */,
 				05479DE21E34A988009A5812 /* Controller */,
 				05479DE11E34A983009A5812 /* View */,
 				05479DE01E34A97E009A5812 /* Model */,
@@ -101,6 +104,14 @@
 				05479DE51E34AA17009A5812 /* ViewMovieVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		05479DEB1E34C735009A5812 /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				05479DEC1E34C756009A5812 /* Data.swift */,
+			);
+			name = DataServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 				05479DCC1E349ECB009A5812 /* AppDelegate.swift in Sources */,
 				05479DD41E349ECB009A5812 /* Movie_For_Thought.xcdatamodeld in Sources */,
 				05479DE61E34AA17009A5812 /* ViewMovieVC.swift in Sources */,
+				05479DED1E34C756009A5812 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
