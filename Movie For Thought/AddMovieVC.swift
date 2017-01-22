@@ -14,6 +14,7 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var movieImdb: UITextField!
     @IBOutlet weak var movieName: UITextField!
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var imdbLink: UITextField!
     var imgPicker: UIImagePickerController!
     
     let DEFAULT_IMAGE = "QuestionMark"
@@ -33,11 +34,12 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     @IBAction func createNewPressed(sender: AnyObject) {
-        if let imdb = movieImdb.text, let desc = movieDesc.text, let name = movieName.text where name != "" && imdb != "" && desc != ""{
+        if let imdb = movieImdb.text, let desc = movieDesc.text, let name = movieName.text, let link = imdbLink.text where name != "" && imdb != "" && desc != ""{
             if img.image == nil{
                 img.image = UIImage(named: DEFAULT_IMAGE)
             }
-            let movie = Movie(name: name, imdb: imdb, desc: desc, imgPath: "")
+            let imgPath = Data.instance.saveImageAndCreatePath(img.image!)
+            let movie = Movie(name: name, imdb: imdb, desc: desc, imgPath: imgPath, link: link)
             Data.instance.addMovie(movie)
             dismissViewControllerAnimated(true, completion: nil)
         }

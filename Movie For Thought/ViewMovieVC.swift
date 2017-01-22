@@ -10,13 +10,28 @@ import UIKit
 
 class ViewMovieVC: UIViewController {
 
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var movieName: UILabel!
+    @IBOutlet weak var movieImdb: UILabel!
+    @IBOutlet weak var movieDesc: UILabel!
+    @IBOutlet weak var link: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        let movie = Data.instance.movies[Data.instance.currentMovieIndex]
+        img.image = Data.instance.imageForPath(movie.imgPath)
+        movieName.text = movie.name
+        movieDesc.text = movie.desc
+        movieImdb.text = "imdb: " + movie.imdb
+        link.text = movie.link
+    }
+    
     @IBAction func onDeleteBtnPressed(sender: AnyObject) {
-        
+        Data.instance.deleteMovie()
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func onBackBtnPressed(sender: AnyObject) {

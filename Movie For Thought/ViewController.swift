@@ -15,10 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onMoviesLoaded(_:)), name: "dataLoaded", object: nil)
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.reloadData()
+        Data.instance.loadMovies()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -28,12 +30,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let movie = Data.instance.movies[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as? MovieCell{
-            cell.configureCell(movie)
+            cell.configureCell(movie, index: indexPath.row)
             return cell
         }
         else{
             let cell = MovieCell()
-            cell.configureCell(movie)
+            cell.configureCell(movie, index: indexPath.row)
             return cell
         }
     }
@@ -45,6 +47,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.instance.movies.count
     }
-
+    
+    func onMoviesLoaded(notif: AnyObject){
+        tableView.reloadData()
+    }
 }
 

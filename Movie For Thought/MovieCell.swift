@@ -16,17 +16,20 @@ class MovieCell: UITableViewCell{
     @IBOutlet weak var imdb: UILabel!
     @IBOutlet weak var viewMovie: UIButton!
     
-    func configureCell(movie: Movie){
-        img.image = UIImage(named: movie.imgPath)
+    func configureCell(movie: Movie, index: Int){
+        img.image = Data.instance.imageForPath(movie.imgPath)
         name.text = movie.name
         desc.text = movie.desc
         imdb.text = movie.imdb
         
         img.layer.cornerRadius = 4.0
         img.clipsToBounds = true
+        
+        viewMovie.tag = index
     }
     
-    @IBAction func viewMoviePressed(sender: AnyObject) {
-        
+    
+    @IBAction func onViewMoviePressed(sender: AnyObject) {
+        Data.instance.setCurrentMovieIndex(sender.tag)
     }
 }

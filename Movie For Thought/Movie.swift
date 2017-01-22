@@ -14,6 +14,7 @@ class Movie: NSObject, NSCoding{
     private var _imdb: String!
     private var _desc: String!
     private var _imgPath: String!
+    private var _link: String!
     
     var name: String{
         return _name
@@ -28,11 +29,16 @@ class Movie: NSObject, NSCoding{
         return _imgPath
     }
     
-    init(name: String, imdb: String, desc: String, imgPath: String){
+    var link: String{
+        return _link
+    }
+    
+    init(name: String, imdb: String, desc: String, imgPath: String, link: String){
         _name = name
         _imdb = imdb
         _desc = desc
         _imgPath = imgPath
+        _link = link
     }
     
     override init(){
@@ -45,12 +51,14 @@ class Movie: NSObject, NSCoding{
         self._imgPath = aDecoder.decodeObjectForKey("imgPath") as? String
         self._desc = aDecoder.decodeObjectForKey("description") as? String
         self._imdb = aDecoder.decodeObjectForKey("imdb") as? String
+        self._link = aDecoder.decodeObjectForKey("link") as? String
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self._name, forKey: "name")
         aCoder.encodeObject(self._imgPath, forKey: "imgPath")
-        aCoder.encodeObject(self._desc, forKey: "desc")
+        aCoder.encodeObject(self._desc, forKey: "description")
         aCoder.encodeObject(self._imdb, forKey: "imdb")
+        aCoder.encodeObject(self._link, forKey: "link")
     }
 }
