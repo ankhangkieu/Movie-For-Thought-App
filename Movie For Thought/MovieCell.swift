@@ -17,7 +17,7 @@ class MovieCell: UITableViewCell{
     @IBOutlet weak var viewMovie: UIButton!
     
     func configureCell(movie: Movie){
-        img.image = movie.img
+        img.image = UIImage(named: movie.imgPath)
         name.text = movie.name
         desc.text = movie.desc
         imdb.text = movie.imdb

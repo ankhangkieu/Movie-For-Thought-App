@@ -21,6 +21,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let movie = Data.instance.movies[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as? MovieCell{

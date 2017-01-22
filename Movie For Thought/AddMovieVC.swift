@@ -33,7 +33,8 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 img.image = UIImage(named: DEFAULT_IMAGE)
             }
             let movie = Movie(name: name, imdb: imdb, desc: desc, imgPath: "")
-            
+            Data.instance.addMovie(movie)
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
