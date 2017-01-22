@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="1117" y="399"/>
         </scene>
-        <!--View Controller-->
+        <!--View MovieVC-->
         <scene sceneID="mba-1F-r4Z">
             <objects>
-                <viewController id="6rE-1f-e3b" sceneMemberID="viewController">
+                <viewController id="6rE-1f-e3b" customClass="ViewMovieVC" customModule="Movie_For_Thought" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FIT-Ev-xZ9"/>
                         <viewControllerLayoutGuide type="bottom" id="hcX-iP-Uyz"/>
