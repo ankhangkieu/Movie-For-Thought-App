@@ -12,6 +12,7 @@ import UIKit
 class Data{
     static let instance = Data()
     private var _movies = [Movie]()
+    private var currentMovieIndex: Int!
     
     var movies: [Movie]{
         return _movies
@@ -21,6 +22,10 @@ class Data{
         _movies.append(movie)
     }
     
-    
+    func deleteMovie(index: Int){
+        if index < _movies.count{
+            _movies.removeAtIndex(index)
+        }
+    }
     
 }

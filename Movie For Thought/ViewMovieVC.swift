@@ -13,7 +13,13 @@ class ViewMovieVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+    }
+    @IBAction func onDeleteBtnPressed(sender: AnyObject) {
+        
     }
 
+    @IBAction func onBackBtnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }

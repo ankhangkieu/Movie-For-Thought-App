@@ -23,12 +23,17 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
         
-        img.layer.cornerRadius = 5.0
+        img.layer.cornerRadius = img.frame.width/2
         img.clipsToBounds = true
     }
 
+    @IBAction func onAddBtnPressed(sender: AnyObject) {
+        sender.setTitle("", forState: .Normal)
+        presentViewController(imgPicker, animated: true, completion: nil)
+    }
+    
     @IBAction func createNewPressed(sender: AnyObject) {
-        if let imdb = movieImdb.text, let desc = movieDesc.text, let name = movieName.text{
+        if let imdb = movieImdb.text, let desc = movieDesc.text, let name = movieName.text where name != "" && imdb != "" && desc != ""{
             if img.image == nil{
                 img.image = UIImage(named: DEFAULT_IMAGE)
             }
@@ -40,5 +45,10 @@ class AddMovieVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     @IBAction func cancelBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        dismissViewControllerAnimated(true, completion: nil)
+        img.image = image
     }
 }

@@ -80,19 +80,18 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="146" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-Lo-Aeg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="146" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-Lo-Aeg">
                                 <rect key="frame" x="0.0" y="68" width="600" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="146" id="MY3-MO-Zcc" customClass="MovieCell" customModule="Movie_For_Thought" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MY3-MO-Zcc" id="TEp-ek-XWT">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="145.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1lK-HF-558">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1lK-HF-558">
                                                     <rect key="frame" x="8" y="8" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="KSP-Dr-WYW"/>
@@ -213,6 +212,9 @@
                                         <state key="normal" title="Back">
                                             <color key="titleColor" red="1" green="0.96246141480000003" blue="0.98217073830000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onBackBtnPressed:" destination="6rE-1f-e3b" eventType="touchUpInside" id="8tI-bL-X2o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lB1-Ip-RdW">
                                         <rect key="frame" x="554" y="16" width="30" height="35"/>
@@ -221,6 +223,9 @@
                                             <constraint firstAttribute="height" constant="35" id="kIL-aV-5cm"/>
                                         </constraints>
                                         <state key="normal" image="trash can"/>
+                                        <connections>
+                                            <action selector="onDeleteBtnPressed:" destination="6rE-1f-e3b" eventType="touchUpInside" id="Zdg-tI-h9j"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34869591950000001" green="0.60131496429999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -235,7 +240,7 @@
                                     <constraint firstAttribute="trailing" secondItem="lB1-Ip-RdW" secondAttribute="trailing" constant="16" id="rPC-8j-Zac"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Rc-GL-Lyc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Rc-GL-Lyc">
                                 <rect key="frame" x="20" y="83" width="200" height="240"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-RP-f5T">
@@ -345,8 +350,9 @@
                                     <constraint firstAttribute="height" constant="70" id="h8T-yh-sef"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="out-nC-C3w">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="out-nC-C3w">
                                 <rect key="frame" x="200" y="88" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.72638602418699127" green="0.73710044027688182" blue="0.78574934554973819" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="GE3-jL-C7p"/>
                                     <constraint firstAttribute="width" constant="200" id="Zgu-Ag-g1f"/>
@@ -400,6 +406,9 @@
                                 <state key="normal" title="+ Add Photo">
                                     <color key="titleColor" red="1" green="0.88419687197694574" blue="0.52737133454842544" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onAddBtnPressed:" destination="tnc-lC-5Gl" eventType="touchUpInside" id="cNr-Xt-Boq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -425,9 +434,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imdb" destination="zaf-mp-3Vm" id="Lnt-TP-Pyz"/>
                         <outlet property="img" destination="out-nC-C3w" id="9Yg-od-hSC"/>
                         <outlet property="movieDesc" destination="3dV-pJ-PzG" id="fi4-R9-sab"/>
+                        <outlet property="movieImdb" destination="zaf-mp-3Vm" id="Kaw-AL-wN5"/>
                         <outlet property="movieName" destination="Q3w-os-NYO" id="H6b-WU-iaf"/>
                     </connections>
                 </viewController>
