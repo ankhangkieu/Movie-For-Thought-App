@@ -13,6 +13,7 @@ class Data {
     static let instance = Data()
     private var _movies = [Movie]()
     private var _currentMovieIndex: Int!
+    private var _currentLink: String!
     
     let KEY_MOVIE = "movies"
     
@@ -22,9 +23,16 @@ class Data {
     var currentMovieIndex: Int{
         return _currentMovieIndex
     }
+    var currentLink: String {
+        return _currentLink
+    }
     
     func setCurrentMovieIndex(index: Int){
         _currentMovieIndex = index
+    }
+    
+    func setCurrentLink(link: String){
+        _currentLink = link
     }
     
     func saveMovies(){
@@ -71,5 +79,9 @@ class Data {
     func imageForPath(imgPath: String)->UIImage{
         let fullPath = documentsPathForFileName(imgPath)
         return UIImage(named: fullPath)!
+    }
+    
+    func requestInternet(){
+        
     }
 }

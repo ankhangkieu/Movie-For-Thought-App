@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050541961E3615700016D9E1 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050541951E3615700016D9E1 /* LinkLabel.swift */; };
+		050541981E3618090016D9E1 /* ViewLinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050541971E3618090016D9E1 /* ViewLinkVC.swift */; };
 		05479DCC1E349ECB009A5812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05479DCB1E349ECB009A5812 /* AppDelegate.swift */; };
 		05479DCE1E349ECB009A5812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05479DCD1E349ECB009A5812 /* ViewController.swift */; };
 		05479DD11E349ECB009A5812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05479DCF1E349ECB009A5812 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050541951E3615700016D9E1 /* LinkLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
+		050541971E3618090016D9E1 /* ViewLinkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLinkVC.swift; sourceTree = "<group>"; };
 		05479DC81E349ECB009A5812 /* Movie For Thought.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie For Thought.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05479DCB1E349ECB009A5812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05479DCD1E349ECB009A5812 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				05479DE91E34B442009A5812 /* Movie.swift */,
+				050541951E3615700016D9E1 /* LinkLabel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 				05479DCD1E349ECB009A5812 /* ViewController.swift */,
 				05479DE31E34A9AB009A5812 /* AddMovieVC.swift */,
 				05479DE51E34AA17009A5812 /* ViewMovieVC.swift */,
+				050541971E3618090016D9E1 /* ViewLinkVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -146,6 +152,7 @@
 				TargetAttributes = {
 					05479DC71E349ECB009A5812 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7UNHEHE2H2;
 					};
 				};
 			};
@@ -188,9 +195,11 @@
 				05479DEA1E34B442009A5812 /* Movie.swift in Sources */,
 				05479DCE1E349ECB009A5812 /* ViewController.swift in Sources */,
 				05479DE41E34A9AB009A5812 /* AddMovieVC.swift in Sources */,
+				050541961E3615700016D9E1 /* LinkLabel.swift in Sources */,
 				05479DE81E34B2C1009A5812 /* MovieCell.swift in Sources */,
 				05479DCC1E349ECB009A5812 /* AppDelegate.swift in Sources */,
 				05479DD41E349ECB009A5812 /* Movie_For_Thought.xcdatamodeld in Sources */,
+				050541981E3618090016D9E1 /* ViewLinkVC.swift in Sources */,
 				05479DE61E34AA17009A5812 /* ViewMovieVC.swift in Sources */,
 				05479DED1E34C756009A5812 /* Data.swift in Sources */,
 			);
@@ -307,10 +316,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Movie For Thought/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KK.Movie-For-Thought";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -318,10 +330,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Movie For Thought/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KK.Movie-For-Thought";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -344,6 +359,7 @@
 				05479DDF1E349ECC009A5812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

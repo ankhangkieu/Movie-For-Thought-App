@@ -14,7 +14,7 @@ class ViewMovieVC: UIViewController {
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var movieImdb: UILabel!
     @IBOutlet weak var movieDesc: UILabel!
-    @IBOutlet weak var link: UILabel!
+    @IBOutlet weak var link: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,10 @@ class ViewMovieVC: UIViewController {
         movieName.text = movie.name
         movieDesc.text = movie.desc
         movieImdb.text = "imdb: " + movie.imdb
-        link.text = movie.link
+        link.setTitle(movie.link, forState: .Normal)
+        if let title = link.currentTitle where title != "" {
+            link.userInteractionEnabled = false
+        }
     }
     
     @IBAction func onDeleteBtnPressed(sender: AnyObject) {
@@ -36,5 +39,9 @@ class ViewMovieVC: UIViewController {
 
     @IBAction func onBackBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func onLinkPressed(sender: UIButton) {
+        Data.instance.setCurrentLink(sender.currentTitle!)
     }
 }
