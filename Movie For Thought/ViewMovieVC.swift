@@ -27,7 +27,7 @@ class ViewMovieVC: UIViewController {
         movieDesc.text = movie.desc
         movieImdb.text = "imdb: " + movie.imdb
         link.setTitle(movie.link, forState: .Normal)
-        if let title = link.currentTitle where title != "" {
+        if let title = link.currentTitle where title == "" {
             link.userInteractionEnabled = false
         }
     }
